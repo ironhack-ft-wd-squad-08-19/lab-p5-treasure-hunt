@@ -8,3 +8,11 @@ body {
 h1 {
   font-weight: 100;
 }
+
+.points {
+  padding-right: 100px;
+}
+
+.container {
+  display: flex;
+}
