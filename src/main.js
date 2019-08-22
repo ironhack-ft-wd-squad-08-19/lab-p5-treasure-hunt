@@ -6,5 +6,9 @@ function setup() {
 }
 
 function draw() {
+  clear();
   game.drawGrid();
+  treasure.drawTreasure();
+  player1.draw();
+  player2.draw();
 }
