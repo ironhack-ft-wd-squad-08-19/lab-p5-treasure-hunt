@@ -10,4 +10,5 @@ function draw() {
   game.drawGrid();
   treasure.drawTreasure();
   player1.draw();
+  player2.draw();
 }
