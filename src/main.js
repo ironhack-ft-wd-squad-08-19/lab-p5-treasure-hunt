@@ -1,13 +1,4 @@
 const game = new Game();
-// let imgUp;
-// let imgDown;
-// let imgRight;
-// let imgLeft;
-// let imgTreasure;
-
-function preload() {
-  //player.preload()
-}
 
 function setup() {
   let canvas = createCanvas(HEIGHT, WIDTH);
@@ -24,11 +15,13 @@ function draw() {
   game.drawGrid();
   player.draw();
   treasure.drawTreasure();
+
 }
 
 function keyPressed() {
   if (keyCode === LEFT_ARROW) {
     player.moveLeft();
+    
   } else if (keyCode === RIGHT_ARROW) {
     player.moveRight();
   } else if (keyCode === UP_ARROW) {

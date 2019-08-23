@@ -19,54 +19,49 @@ class Player {
     this.row = row;
     this.x = col * SQUARE_SIDE;
     this.y = row * SQUARE_SIDE;
+    this.iconImage;
+    
+  }
+
+  preload() {
+  
+    this.iconImage = loadImage("../assets/character-down.png");
+   
   }
 
   moveUp() {
-    image(this.imgUp, this.x, this.y, 100, 100);
+    this.iconImage = loadImage("../assets/character-up.png");
     this.row -= 1;
     this.y = this.row * SQUARE_SIDE;
-   
   }
 
   moveDown() {
     this.row += 1;
     this.y = this.row * SQUARE_SIDE;
-    image(this.imgDown, this.x, this.y, 100, 100);
+    this.iconImage= loadImage("../assets/character-down.png");
   }
 
   moveLeft() {
     this.col -= 1;
     this.x = this.col * SQUARE_SIDE;
-    image(this.imgLeft, this.x, this.y, 100, 100);
+    this.iconImage=loadImage("../assets/character-left.png");
   }
 
   moveRight() {
     this.col += 1;
     this.x = this.col * SQUARE_SIDE;
-    image(this.imgRight, this.x, this.y, 100, 100);
+    this.iconImage=loadImage("../assets/character-right.png");
   }
-  preload() {
-    this.imgUp = loadImage("../assets/character-up.png");
-    this.imgDown = loadImage("../assets/character-down.png");
-    this.imgRight = loadImage("../assets/character-right.png");
-    this.imgLeft = loadImage("../assets/character-left.png");
-  
-  }
+
   draw() {
-    image(this.imgDown, this.x, this.y, 100, 100);
-    // fill('red')
-    // rect(this.col, this.row, 100,100)
+    image(this.iconImage, this.x, this.y, 100, 100);
   }
 }
 
-
 class Treasure {
   constructor() {
-   
-
     this.col = Math.floor(Math.random() * 9);
     this.row = Math.floor(Math.random() * 9);
-
   }
 
   preload() {
@@ -74,9 +69,12 @@ class Treasure {
   }
 
   drawTreasure() {
- 
-    image(this.imgTreasure, this.col*SQUARE_SIDE, this.row*SQUARE_SIDE, 100, 100);
+    image(
+      this.imgTreasure,
+      this.col * SQUARE_SIDE,
+      this.row * SQUARE_SIDE,
+      100,
+      100
+    );
   }
 }
-
-
